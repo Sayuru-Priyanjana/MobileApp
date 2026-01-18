@@ -1,0 +1,402 @@
+
+Support for Android x86 targets will be removed in the next stable release after 3.27. See https://github.com/flutter/flutter/issues/157543 for details.
+Running Gradle task 'assembleDebug'...                          
+e: Daemon compilation failed: null
+java.lang.Exception
+	at org.jetbrains.kotlin.daemon.common.CompileService$CallResult$Error.get(CompileService.kt:69)
+	at org.jetbrains.kotlin.daemon.common.CompileService$CallResult$Error.get(CompileService.kt:65)
+	at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.compileWithDaemon(GradleKotlinCompilerWork.kt:244)
+	at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.compileWithDaemonOrFallbackImpl(GradleKotlinCompilerWork.kt:175)
+	at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.run(GradleKotlinCompilerWork.kt:135)
+	at org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction.execute(GradleCompilerRunnerWithWorkers.kt:73)
+	at org.gradle.workers.internal.DefaultWorkerServer.execute(DefaultWorkerServer.java:63)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:66)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:62)
+	at org.gradle.internal.classloader.ClassLoaderUtils.executeInClassloader(ClassLoaderUtils.java:100)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.lambda$execute$0(NoIsolationWorkerFactory.java:62)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:44)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:41)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.workers.internal.AbstractWorker.executeWrappedInBuildOperation(AbstractWorker.java:41)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.execute(NoIsolationWorkerFactory.java:59)
+	at org.gradle.workers.internal.DefaultWorkerExecutor.lambda$submitWork$0(DefaultWorkerExecutor.java:174)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runExecution(DefaultConditionalExecutionQueue.java:194)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.access$700(DefaultConditionalExecutionQueue.java:127)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner$1.run(DefaultConditionalExecutionQueue.java:169)
+	at org.gradle.internal.Factories$1.create(Factories.java:31)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:263)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:127)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:132)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runBatch(DefaultConditionalExecutionQueue.java:164)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.run(DefaultConditionalExecutionQueue.java:133)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_database-12.1.1\android\src\main\kotlin\io\flutter\plugins\firebase\database\ChildEventsProxy.kt and D:\Projects\Campus Projects\MobileApp\android.
+	at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
+	at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
+	at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:22)
+	at org.jetbrains.kotlin.incremental.storage.ComplementarySourceFilesMap.get(ComplementarySourceFilesMap.kt:22)
+	at org.jetbrains.kotlin.incremental.AbstractIncrementalCache.getComplementaryFilesRecursive(AbstractIncrementalCache.kt:219)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.doCompile(IncrementalCompilerRunner.kt:455)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileImpl(IncrementalCompilerRunner.kt:400)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileNonIncrementally(IncrementalCompilerRunner.kt:281)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compile(IncrementalCompilerRunner.kt:125)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.execIncrementalCompiler(CompileServiceImpl.kt:657)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.access$execIncrementalCompiler(CompileServiceImpl.kt:105)
+	at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(CompileServiceImpl.kt:1624)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	... 3 more
+
+e: Daemon compilation failed: null
+java.lang.Exception
+	at org.jetbrains.kotlin.daemon.common.CompileService$CallResult$Error.get(CompileService.kt:69)
+	at org.jetbrains.kotlin.daemon.common.CompileService$CallResult$Error.get(CompileService.kt:65)
+	at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.compileWithDaemon(GradleKotlinCompilerWork.kt:244)
+	at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.compileWithDaemonOrFallbackImpl(GradleKotlinCompilerWork.kt:175)
+	at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.run(GradleKotlinCompilerWork.kt:135)
+	at org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction.execute(GradleCompilerRunnerWithWorkers.kt:73)
+	at org.gradle.workers.internal.DefaultWorkerServer.execute(DefaultWorkerServer.java:63)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:66)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:62)
+	at org.gradle.internal.classloader.ClassLoaderUtils.executeInClassloader(ClassLoaderUtils.java:100)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.lambda$execute$0(NoIsolationWorkerFactory.java:62)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:44)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:41)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.workers.internal.AbstractWorker.executeWrappedInBuildOperation(AbstractWorker.java:41)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.execute(NoIsolationWorkerFactory.java:59)
+	at org.gradle.workers.internal.DefaultWorkerExecutor.lambda$submitWork$0(DefaultWorkerExecutor.java:174)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runExecution(DefaultConditionalExecutionQueue.java:194)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.access$700(DefaultConditionalExecutionQueue.java:127)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner$1.run(DefaultConditionalExecutionQueue.java:169)
+	at org.gradle.internal.Factories$1.create(Factories.java:31)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:263)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:127)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:132)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runBatch(DefaultConditionalExecutionQueue.java:164)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.run(DefaultConditionalExecutionQueue.java:133)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt and D:\Projects\Campus Projects\MobileApp\android.
+	at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
+	at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
+	at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:22)
+	at org.jetbrains.kotlin.incremental.storage.ComplementarySourceFilesMap.get(ComplementarySourceFilesMap.kt:22)
+	at org.jetbrains.kotlin.incremental.AbstractIncrementalCache.getComplementaryFilesRecursive(AbstractIncrementalCache.kt:219)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.doCompile(IncrementalCompilerRunner.kt:455)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileImpl(IncrementalCompilerRunner.kt:400)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileNonIncrementally(IncrementalCompilerRunner.kt:281)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compile(IncrementalCompilerRunner.kt:125)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.execIncrementalCompiler(CompileServiceImpl.kt:657)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.access$execIncrementalCompiler(CompileServiceImpl.kt:105)
+	at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(CompileServiceImpl.kt:1624)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	... 3 more
+
+e: Daemon compilation failed: null
+java.lang.Exception
+	at org.jetbrains.kotlin.daemon.common.CompileService$CallResult$Error.get(CompileService.kt:69)
+	at org.jetbrains.kotlin.daemon.common.CompileService$CallResult$Error.get(CompileService.kt:65)
+	at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.compileWithDaemon(GradleKotlinCompilerWork.kt:244)
+	at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.compileWithDaemonOrFallbackImpl(GradleKotlinCompilerWork.kt:175)
+	at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.run(GradleKotlinCompilerWork.kt:135)
+	at org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction.execute(GradleCompilerRunnerWithWorkers.kt:73)
+	at org.gradle.workers.internal.DefaultWorkerServer.execute(DefaultWorkerServer.java:63)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:66)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:62)
+	at org.gradle.internal.classloader.ClassLoaderUtils.executeInClassloader(ClassLoaderUtils.java:100)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.lambda$execute$0(NoIsolationWorkerFactory.java:62)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:44)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:41)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.workers.internal.AbstractWorker.executeWrappedInBuildOperation(AbstractWorker.java:41)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.execute(NoIsolationWorkerFactory.java:59)
+	at org.gradle.workers.internal.DefaultWorkerExecutor.lambda$submitWork$0(DefaultWorkerExecutor.java:174)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runExecution(DefaultConditionalExecutionQueue.java:194)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.access$700(DefaultConditionalExecutionQueue.java:127)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner$1.run(DefaultConditionalExecutionQueue.java:169)
+	at org.gradle.internal.Factories$1.create(Factories.java:31)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:263)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:127)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:132)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runBatch(DefaultConditionalExecutionQueue.java:164)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.run(DefaultConditionalExecutionQueue.java:133)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.4.13\android\src\main\kotlin\io\flutter\plugins\sharedpreferences\MessagesAsync.g.kt and D:\Projects\Campus Projects\MobileApp\android.
+	at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
+	at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
+	at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:22)
+	at org.jetbrains.kotlin.incremental.storage.ComplementarySourceFilesMap.get(ComplementarySourceFilesMap.kt:22)
+	at org.jetbrains.kotlin.incremental.AbstractIncrementalCache.getComplementaryFilesRecursive(AbstractIncrementalCache.kt:219)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.doCompile(IncrementalCompilerRunner.kt:455)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileImpl(IncrementalCompilerRunner.kt:400)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileNonIncrementally(IncrementalCompilerRunner.kt:281)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compile(IncrementalCompilerRunner.kt:125)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.execIncrementalCompiler(CompileServiceImpl.kt:657)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.access$execIncrementalCompiler(CompileServiceImpl.kt:105)
+	at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(CompileServiceImpl.kt:1624)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	... 3 more
+
+exception: error: incompatible classes were found in dependencies. Remove them from the classpath or use '-Xskip-metadata-version-check' to suppress errors
+exception: c:\Users\sayur\.gradle\caches\8.10.2\transforms\e176ac72d3244d466b8a90b1fc813f1d\transformed\jetified-kotlin-stdlib-2.2.0.jar!\META-INF\kotlin-stdlib-jdk7.kotlin_module: error: module was compiled with an incompatible version of Kotlin. The binary version of its metadata is 2.2.0, expected version is 1.9.0.
+exception: c:\Users\sayur\.gradle\caches\8.10.2\transforms\e176ac72d3244d466b8a90b1fc813f1d\transformed\jetified-kotlin-stdlib-2.2.0.jar!\META-INF\kotlin-stdlib-jdk8.kotlin_module: error: module was compiled with an incompatible version of Kotlin. The binary version of its metadata is 2.2.0, expected version is 1.9.0.
+exception: c:\Users\sayur\.gradle\caches\8.10.2\transforms\e176ac72d3244d466b8a90b1fc813f1d\transformed\jetified-kotlin-stdlib-2.2.0.jar!\META-INF\kotlin-stdlib.kotlin_module: error: module was compiled with an incompatible version of Kotlin. The binary version of its metadata is 2.2.0, expected version is 1.9.0.
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:22:9: error: class 'kotlin.Unit' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.2.0, but the compiler version 1.9.0 can read versions up to 2.0.0.
+exception: the class is loaded from C:/Users/sayur/.gradle/caches/8.10.2/transforms/e176ac72d3244d466b8a90b1fc813f1d/transformed/jetified-kotlin-stdlib-2.2.0.jar!/kotlin/Unit.class
+exception:         applicationContext = binding.applicationContext
+exception:         ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:23:9: error: class 'kotlin.Unit' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.2.0, but the compiler version 1.9.0 can read versions up to 2.0.0.
+exception: the class is loaded from C:/Users/sayur/.gradle/caches/8.10.2/transforms/e176ac72d3244d466b8a90b1fc813f1d/transformed/jetified-kotlin-stdlib-2.2.0.jar!/kotlin/Unit.class
+exception:         methodChannel = MethodChannel(binding.binaryMessenger, CHANNEL_NAME)
+exception:         ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:24:25: error: class 'kotlin.Unit' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.2.0, but the compiler version 1.9.0 can read versions up to 2.0.0.
+exception: the class is loaded from C:/Users/sayur/.gradle/caches/8.10.2/transforms/e176ac72d3244d466b8a90b1fc813f1d/transformed/jetified-kotlin-stdlib-2.2.0.jar!/kotlin/Unit.class
+exception:         methodChannel!!.setMethodCallHandler(this)
+exception:                         ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:28:9: error: class 'kotlin.Unit' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.2.0, but the compiler version 1.9.0 can read versions up to 2.0.0.
+exception: the class is loaded from C:/Users/sayur/.gradle/caches/8.10.2/transforms/e176ac72d3244d466b8a90b1fc813f1d/transformed/jetified-kotlin-stdlib-2.2.0.jar!/kotlin/Unit.class
+exception:         applicationContext = null
+exception:         ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:29:25: error: class 'kotlin.Unit' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.2.0, but the compiler version 1.9.0 can read versions up to 2.0.0.
+exception: the class is loaded from C:/Users/sayur/.gradle/caches/8.10.2/transforms/e176ac72d3244d466b8a90b1fc813f1d/transformed/jetified-kotlin-stdlib-2.2.0.jar!/kotlin/Unit.class
+exception:         methodChannel!!.setMethodCallHandler(null)
+exception:                         ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:30:9: error: class 'kotlin.Unit' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.2.0, but the compiler version 1.9.0 can read versions up to 2.0.0.
+exception: the class is loaded from C:/Users/sayur/.gradle/caches/8.10.2/transforms/e176ac72d3244d466b8a90b1fc813f1d/transformed/jetified-kotlin-stdlib-2.2.0.jar!/kotlin/Unit.class
+exception:         methodChannel = null
+exception:         ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:34:9: error: class 'kotlin.Unit' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.2.0, but the compiler version 1.9.0 can read versions up to 2.0.0.
+exception: the class is loaded from C:/Users/sayur/.gradle/caches/8.10.2/transforms/e176ac72d3244d466b8a90b1fc813f1d/transformed/jetified-kotlin-stdlib-2.2.0.jar!/kotlin/Unit.class
+exception:         try {
+exception:         ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:35:13: error: class 'kotlin.Unit' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.2.0, but the compiler version 1.9.0 can read versions up to 2.0.0.
+exception: the class is loaded from C:/Users/sayur/.gradle/caches/8.10.2/transforms/e176ac72d3244d466b8a90b1fc813f1d/transformed/jetified-kotlin-stdlib-2.2.0.jar!/kotlin/Unit.class
+exception:             if (call.method == "getAll") {
+exception:             ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:46:31: error: unresolved reference: HashMap
+exception:                 val infoMap = HashMap<String, String>()
+exception:                               ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:48:21: error: unresolved reference: put
+exception:                     put("appName", info.applicationInfo?.loadLabel(packageManager)?.toString() ?: "")
+exception:                     ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:49:21: error: unresolved reference: put
+exception:                     put("packageName", applicationContext!!.packageName)
+exception:                     ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:50:21: error: unresolved reference: put
+exception:                     put("version", info.versionName ?: "")
+exception:                     ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:51:21: error: unresolved reference: put
+exception:                     put("buildNumber", getLongVersionCode(info).toString())
+exception:                     ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:52:49: error: unresolved reference: put
+exception:                     if (buildSignature != null) put("buildSignature", buildSignature)
+exception:                                                 ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:53:51: error: unresolved reference: put
+exception:                     if (installerPackage != null) put("installerStore", installerPackage)
+exception:                                                   ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:54:21: error: unresolved reference: put
+exception:                     put("installTime", installTimeMillis.toString())
+exception:                     ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:55:21: error: unresolved reference: put
+exception:                     put("updateTime", updateTimeMillis.toString())
+exception:                     ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:56:26: error: cannot infer a type for this parameter. Please specify it explicitly.
+exception:                 }.also { resultingMap ->
+exception:                          ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:57:28: error: class 'kotlin.Unit' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.2.0, but the compiler version 1.9.0 can read versions up to 2.0.0.
+exception: the class is loaded from C:/Users/sayur/.gradle/caches/8.10.2/transforms/e176ac72d3244d466b8a90b1fc813f1d/transformed/jetified-kotlin-stdlib-2.2.0.jar!/kotlin/Unit.class
+exception:                     result.success(resultingMap)
+exception:                            ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:60:24: error: class 'kotlin.Unit' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.2.0, but the compiler version 1.9.0 can read versions up to 2.0.0.
+exception: the class is loaded from C:/Users/sayur/.gradle/caches/8.10.2/transforms/e176ac72d3244d466b8a90b1fc813f1d/transformed/jetified-kotlin-stdlib-2.2.0.jar!/kotlin/Unit.class
+exception:                 result.notImplemented()
+exception:                        ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:63:20: error: class 'kotlin.Unit' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.2.0, but the compiler version 1.9.0 can read versions up to 2.0.0.
+exception: the class is loaded from C:/Users/sayur/.gradle/caches/8.10.2/transforms/e176ac72d3244d466b8a90b1fc813f1d/transformed/jetified-kotlin-stdlib-2.2.0.jar!/kotlin/Unit.class
+exception:             result.error("Name not found", ex.message, null)
+exception:                    ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:77:14: error: class 'kotlin.Suppress' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.2.0, but the compiler version 1.9.0 can read versions up to 2.0.0.
+exception: the class is loaded from C:/Users/sayur/.gradle/caches/8.10.2/transforms/e176ac72d3244d466b8a90b1fc813f1d/transformed/jetified-kotlin-stdlib-2.2.0.jar!/kotlin/Suppress.class
+exception:             @Suppress("DEPRECATION")
+exception:              ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:82:6: error: class 'kotlin.Suppress' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.2.0, but the compiler version 1.9.0 can read versions up to 2.0.0.
+exception: the class is loaded from C:/Users/sayur/.gradle/caches/8.10.2/transforms/e176ac72d3244d466b8a90b1fc813f1d/transformed/jetified-kotlin-stdlib-2.2.0.jar!/kotlin/Suppress.class
+exception:     @Suppress("deprecation")
+exception:      ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:91:6: error: class 'kotlin.Suppress' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.2.0, but the compiler version 1.9.0 can read versions up to 2.0.0.
+exception: the class is loaded from C:/Users/sayur/.gradle/caches/8.10.2/transforms/e176ac72d3244d466b8a90b1fc813f1d/transformed/jetified-kotlin-stdlib-2.2.0.jar!/kotlin/Suppress.class
+exception:     @Suppress("deprecation", "PackageManagerGetSignatures")
+exception:      ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:102:70: error: unresolved reference: first
+exception:                     signatureToSha256(signingInfo.apkContentsSigners.first().toByteArray())
+exception:                                                                      ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:104:77: error: unresolved reference: first
+exception:                     signatureToSha256(signingInfo.signingCertificateHistory.first().toByteArray())
+exception:                                                                             ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:113:32: error: unresolved reference: isNullOrEmpty
+exception:                 if (signatures.isNullOrEmpty() || signatures.first() == null) {
+exception:                                ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:113:62: error: unresolved reference: first
+exception:                 if (signatures.isNullOrEmpty() || signatures.first() == null) {
+exception:                                                              ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:116:50: error: unresolved reference: first
+exception:                     signatureToSha256(signatures.first().toByteArray())
+exception:                                                  ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:127:6: error: class 'kotlin.jvm.Throws' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.2.0, but the compiler version 1.9.0 can read versions up to 2.0.0.
+exception: the class is loaded from C:/Users/sayur/.gradle/caches/8.10.2/transforms/e176ac72d3244d466b8a90b1fc813f1d/transformed/jetified-kotlin-stdlib-2.2.0.jar!/kotlin/jvm/Throws.class
+exception:     @Throws(NoSuchAlgorithmException::class)
+exception:      ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:130:16: error: class 'kotlin.Unit' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.2.0, but the compiler version 1.9.0 can read versions up to 2.0.0.
+exception: the class is loaded from C:/Users/sayur/.gradle/caches/8.10.2/transforms/e176ac72d3244d466b8a90b1fc813f1d/transformed/jetified-kotlin-stdlib-2.2.0.jar!/kotlin/Unit.class
+exception:         digest.update(sig)
+exception:                ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:142:25: error: unresolved reference: indices
+exception:         for (j in bytes.indices) {
+exception:                         ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:144:13: error: class 'kotlin.Unit' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.2.0, but the compiler version 1.9.0 can read versions up to 2.0.0.
+exception: the class is loaded from C:/Users/sayur/.gradle/caches/8.10.2/transforms/e176ac72d3244d466b8a90b1fc813f1d/transformed/jetified-kotlin-stdlib-2.2.0.jar!/kotlin/Unit.class
+exception:             hexChars[j * 2] = hexArray[v ushr 4]
+exception:             ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:145:13: error: class 'kotlin.Unit' was compiled with an incompatible version of Kotlin. The actual metadata version is 2.2.0, but the compiler version 1.9.0 can read versions up to 2.0.0.
+exception: the class is loaded from C:/Users/sayur/.gradle/caches/8.10.2/transforms/e176ac72d3244d466b8a90b1fc813f1d/transformed/jetified-kotlin-stdlib-2.2.0.jar!/kotlin/Unit.class
+exception:             hexChars[j * 2 + 1] = hexArray[v and 0x0F]
+exception:             ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\package_info_plus-9.0.0\android\src\main\kotlin\dev\fluttercommunity\plus\packageinfo\PackageInfoPlugin.kt:147:23: error: too many arguments for public constructor String() defined in kotlin.String
+exception:         return String(hexChars)
+exception:                       ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.4.13\android\src\main\kotlin\io\flutter\plugins\sharedpreferences\SharedPreferencesPlugin.kt:451:52: warning: unnecessary non-null assertion (!!) on a non-null receiver of type String
+exception:       if (value!!.startsWith(LIST_PREFIX) && !value!!.startsWith(JSON_LIST_PREFIX)) {
+exception:                                                    ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_database-12.1.1\android\src\main\kotlin\io\flutter\plugins\firebase\database\ChildEventsProxy.kt:17:3: warning: '@JvmOverloads' annotation has no effect for methods without default arguments
+exception:   @JvmOverloads
+exception:   ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_database-12.1.1\android\src\main\kotlin\io\flutter\plugins\firebase\database\EventStreamHandler.kt:21:3: warning: '@JvmOverloads' annotation has no effect for methods without default arguments
+exception:   @JvmOverloads
+exception:   ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_database-12.1.1\android\src\main\kotlin\io\flutter\plugins\firebase\database\EventsProxy.kt:18:3: warning: '@JvmOverloads' annotation has no effect for methods without default arguments
+exception:   @JvmOverloads
+exception:   ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_database-12.1.1\android\src\main\kotlin\io\flutter\plugins\firebase\database\FirebaseDatabasePlugin.kt:483:20: warning: unnecessary safe call on a non-null receiver of type EventChannel.StreamHandler
+exception:       streamHandler?.onCancel(null)
+exception:                    ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_database-12.1.1\android\src\main\kotlin\io\flutter\plugins\firebase\database\FirebaseDatabasePlugin.kt:616:73: warning: unnecessary safe call on a non-null receiver of type Any?
+exception:           println("Warning: Unexpected priority type: ${request.priority?.javaClass?.simpleName}, value: $request.priority")
+exception:                                                                         ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_database-12.1.1\android\src\main\kotlin\io\flutter\plugins\firebase\database\FirebaseDatabasePlugin.kt:669:73: warning: unnecessary safe call on a non-null receiver of type Any?
+exception:           println("Warning: Unexpected priority type: ${request.priority?.javaClass?.simpleName}, value: $request.priority")
+exception:                                                                         ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_database-12.1.1\android\src\main\kotlin\io\flutter\plugins\firebase\database\FlutterFirebaseDatabaseException.kt:47:36: warning: elvis operator (?:) always returns the left operand of non-nullable type String
+exception:           return unknown(e.message ?: UNKNOWN_ERROR_MESSAGE)
+exception:                                    ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_database-12.1.1\android\src\main\kotlin\io\flutter\plugins\firebase\database\FlutterFirebaseDatabaseException.kt:81:30: warning: unnecessary safe call on a non-null receiver of type String?
+exception:             message = message?.replaceFirst("java.lang.Exception: ", "") ?: UNKNOWN_ERROR_MESSAGE
+exception:                              ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_database-12.1.1\android\src\main\kotlin\io\flutter\plugins\firebase\database\QueryBuilder.kt:15:3: warning: '@JvmOverloads' annotation has no effect for methods without default arguments
+exception:   @JvmOverloads
+exception:   ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_database-12.1.1\android\src\main\kotlin\io\flutter\plugins\firebase\database\TransactionHandler.kt:22:3: warning: '@JvmOverloads' annotation has no effect for methods without default arguments
+exception:   @JvmOverloads
+exception:   ^
+exception: c:\Users\sayur\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_database-12.1.1\android\src\main\kotlin\io\flutter\plugins\firebase\database\ValueEventsProxy.kt:16:3: warning: '@JvmOverloads' annotation has no effect for methods without default arguments
+exception:   @JvmOverloads
+exception:   ^
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':package_info_plus:compileDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 44s
+Running Gradle task 'assembleDebug'...                             45.2s
+
+┌─ Flutter Fix ────────────────────────────────────────────────────────────────────────────────┐
+│ [!] Your project requires a newer version of the Kotlin Gradle plugin.                       │
+│ Find the latest version on https://kotlinlang.org/docs/releases.html#release-details, then   │
+│ update the                                                                                   │
+│ version number of the plugin with id "org.jetbrains.kotlin.android" in the plugins block of  │
+│ D:\Projects\Campus Projects\MobileApp\android\settings.gradle.                               │
+│                                                                                              │
+│ Alternatively (if your project was created before Flutter 3.19), update                      │
+│ D:\Projects\Campus Projects\MobileApp\android\build.gradle                                   │
+│ ext.kotlin_version = '<latest-version>'                                                      │
+└──────────────────────────────────────────────────────────────────────────────────────────────┘
+Gradle task assembleDebug failed with exit code 1
