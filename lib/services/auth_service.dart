@@ -8,16 +8,10 @@ import '../config/constants.dart';
 class AuthService {
   final DatabaseReference _db = FirebaseDatabase.instance.ref();
 
-  // Simple "Login" by checking if username/password matches (stored in plain text for this demo as requested "just store credentials")
-  // Ideally, use Auth providers or hash passwords.
+
 
   Future<UserModel?> login(String username, String password) async {
-    // Query users by username
-    // Note: This requires indexing on 'username' in Firebase rules for performance,
-    // but for small scale scanning is okay.
-    // Since we don't have easy query-by-value on non-indexed keys without rules,
-    // and we assume default rules, we might need to fetch all users or structure as users/username.
-    // Let's structure as `users/{userId}` and we save a mapping `usernames/{username} : {userId}` for lookup.
+  
 
     try {
       String safeUsername = username.toLowerCase();
@@ -26,7 +20,7 @@ class AuthService {
       if (usernameSnapshot.exists && usernameSnapshot.value != null) {
         String userId = usernameSnapshot.value.toString();
 
-        // Fetch user data including password
+      
         final userSnapshot = await _db.child('users').child(userId).get();
         if (userSnapshot.exists) {
           final data = userSnapshot.value as Map;
@@ -70,10 +64,10 @@ class AuthService {
         profileImageUrl: profileImageUrl,
       );
 
-      // Save user data (including password for this demo)
+      
       Map<String, dynamic> userData = newUser.toJson();
       userData['password'] =
-          password; // Storing plain text as requested for "just store credentials"
+          password; 
       userData['username_key'] = safeUsername;
 
       await _db.child('users').child(userId).set(userData);
