@@ -6,7 +6,7 @@ import 'config/theme.dart';
 import 'providers/feed_provider.dart';
 import 'providers/user_provider.dart';
 import 'screens/auth/splash_screen.dart';
-import 'firebase_options.dart'; // Will error if not present, but user must configure
+import 'firebase_options.dart'; 
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,15 +19,14 @@ void main() async {
   } catch (e) {
     print("Firebase Init Error (Using Default/Manual?): $e");
     try {
-      // Fallback for web or if options missing but config in place?
-      // Or just try default init if CLI failed
+     
       await Firebase.initializeApp();
     } catch (e2) {
       print("Failed to initialize Firebase: $e2");
     }
   }
 
-  // Set status bar color
+  
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../providers/user_provider.dart';
 import '../../widgets/custom_button.dart';
@@ -49,17 +50,18 @@ class _LoginScreenState extends State<LoginScreen> {
 
             Text(
               'Lumo',
-              style: TextStyle(
-                fontFamily: 'Outfit', // Or 'Billabong' if available?
+              style: GoogleFonts.outfit(
                 fontSize: 50,
                 fontWeight: FontWeight.bold,
                 fontStyle: FontStyle.italic,
                 color:
-                    Theme.of(context).cardColor == Colors.black
+                    Theme.of(context).brightness == Brightness.dark
                         ? Colors.white
                         : Colors.black,
               ),
             ),
+
+            const SizedBox(height: 24),
             const SizedBox(height: 48),
 
             // Inputs

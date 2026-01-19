@@ -42,45 +42,61 @@ class _MainScreenState extends State<MainScreen> {
 
     return Scaffold(
       body: screens[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        selectedItemColor: Theme.of(context).primaryColor,
-        unselectedItemColor: Colors.grey,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
-            activeIcon: Icon(Icons.home),
-            label: 'Home',
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Theme.of(context).scaffoldBackgroundColor,
+          border: Border(
+            top: BorderSide(
+              color: Theme.of(context).dividerColor.withOpacity(0.1),
+              width: 1,
+            ),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            activeIcon: Icon(Icons.search, weight: 700),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add_circle_outline, size: 32),
-            activeIcon: Icon(Icons.add_circle, size: 32),
-            label: 'Create',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.explore_outlined),
-            activeIcon: Icon(Icons.explore),
-            label: 'Discovery',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            activeIcon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
+        ),
+        child: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+          backgroundColor: Colors.transparent, // Use Container color
+          elevation: 0,
+          selectedItemColor: Theme.of(context).primaryColor,
+          unselectedItemColor: Colors.grey.withOpacity(0.6),
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          type: BottomNavigationBarType.fixed,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home_outlined, size: 28),
+              activeIcon: Icon(Icons.home, size: 28),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search, size: 28),
+              activeIcon: Icon(Icons.search, weight: 700, size: 28),
+              label: 'Search',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.add_circle_outline,
+                size: 36,
+              ), // Prominent Create
+              activeIcon: Icon(Icons.add_circle, size: 36),
+              label: 'Create',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.explore_outlined, size: 28),
+              activeIcon: Icon(Icons.explore, size: 28),
+              label: 'Discovery',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person_outline, size: 28),
+              activeIcon: Icon(Icons.person, size: 28),
+              label: 'Profile',
+            ),
+          ],
+        ),
       ),
     );
   }
