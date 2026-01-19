@@ -33,7 +33,7 @@ class UserProvider with ChangeNotifier {
     if (user == null) {
       return 'Invalid credentials';
     }
-    return null; // No error
+    return null; 
   }
 
   Future<String?> register(

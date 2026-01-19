@@ -25,7 +25,7 @@ class AuthService {
         if (userSnapshot.exists) {
           final data = userSnapshot.value as Map;
           if (data['password'] == password) {
-            // Success
+            
             final user = UserModel.fromJson(data);
             await _saveUserLocally(user);
             return user;
@@ -47,7 +47,7 @@ class AuthService {
   }) async {
     try {
       String safeUsername = username.toLowerCase();
-      // Check if username exists
+     
       final usernameSnapshot =
           await _db.child('usernames').child(safeUsername).get();
       if (usernameSnapshot.exists) {
@@ -58,7 +58,7 @@ class AuthService {
 
       final newUser = UserModel(
         id: userId,
-        username: username, // Keep display name as original
+        username: username, 
         email: email,
         bio: bio,
         profileImageUrl: profileImageUrl,
