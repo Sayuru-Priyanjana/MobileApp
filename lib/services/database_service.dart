@@ -178,15 +178,7 @@ class DatabaseService {
         .remove();
   }
 
-  // Helper to fetch all stories from followed users + self (for Feed)
-  // Since stories are now nested, we can't just query 'stories' root.
-  // We need to fetch stories for each followed user.
-  // For simplicity in this session, we will fetch ALL users and filter, OR fetch individually.
-  // Fetching all users is heavy.
-  // Better approach: Maintain a 'feed_stories' or just iterate followed users.
-  // Given user wants "one circle per user", iterating users is fine.
-  // We won't have a single stream for ALL stories easily. We need to fetch/listen.
-  // I will expose a method to get stories for a specific user ID.
+
   Stream<DatabaseEvent> getUserStories(String userId) {
     return _db
         .child('users')
@@ -196,9 +188,7 @@ class DatabaseService {
         .onValue;
   }
 
-  // Backwards compatibility/Search for "All Stories" (e.g. Discovery) is harder.
-  // I'll leave 'storiesQuery' but it won't work with new structure.
-  // I'll remove it.
+
 
   // --- Notifications ---
 
@@ -302,7 +292,7 @@ class DatabaseService {
       print("Search index error (using fallback): $e");
     }
 
-    // 2. Fallback: Client-side filter (handles missing keys/indices)
+
     // Fetch recent 50 users (or all if small DB)
     final fallbackResult = await _db.child('users').limitToFirst(50).get();
     if (fallbackResult.exists && fallbackResult.value != null) {

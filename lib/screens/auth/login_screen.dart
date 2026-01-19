@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            Flexible(child: Container(), flex: 1), // Top Spacer
+            Flexible(child: Container(), flex: 1), 
 
             Text(
               'Lumo',
@@ -64,7 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(height: 24),
             const SizedBox(height: 48),
 
-            // Inputs
+          
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
@@ -103,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
 
-            Flexible(child: Container(), flex: 2), // Bottom Spacer
+            Flexible(child: Container(), flex: 2), 
             // Bottom Sign Up
             const Divider(height: 1),
             Padding(
