@@ -61,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen> {
               Text(
                 'Lumo',
                 style: TextStyle(
-                  fontFamily: 'Outfit', // Or specific script if available
+                  fontFamily: 'Outfit', 
                   fontSize: 60,
                   fontWeight: FontWeight.bold,
                   fontStyle: FontStyle.italic,

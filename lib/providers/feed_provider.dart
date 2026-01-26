@@ -29,9 +29,8 @@ class FeedProvider with ChangeNotifier {
           loaded.add(PostModel.fromJson(key, value as Map));
         });
 
-        // Random order as requested, or maybe chronological?
-        // User asked for "Random order".
-        loaded.shuffle();
+        // Sort by timestamp descending (newest first) to maintain stable order
+        loaded.sort((a, b) => b.timestamp.compareTo(a.timestamp));
 
         _posts = loaded;
       } else {
